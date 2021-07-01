@@ -1,0 +1,128 @@
+:root {
+  --basic-white: #FFFFFF;
+  --basic-black: #000000;
+  --red: #FB565A;
+  --red-darker: #E74246;
+  --red-darkest: #D7373B;
+  --green: #00CA74;
+  --green-darker: #00CA74;
+  --green-darkest: #00AA62;
+  --yellow: #EFC849;
+  --yellow-darker: #EAB534;
+  --yellow-darkest: #E5A722;
+  --gray: #EEEEEE;
+  --gray-darker: #DFDFDF;
+  --gray-darkest: #D5D5D5;
+  --socials: #E1E1E1;
+
+}
+
+.page {
+  height: 100%;
+}
+
+body {
+  width: 1440px;
+  min-width: 960px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+/* Main Page */
+/* Header */
+
+.header-wrapper {
+  width: 1440px;
+  height: 115px;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: var(--gray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 140px;
+  padding-right: 140px;
+  padding-top: 49px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.logo-main path:hover,  /* Почему отдельно выделяется буква d? */
+.logo-main path:focus {
+  opacity: 0.7;
+}
+
+.logo-main path:active {
+  opacity: 0.3;
+}
+
+.site-navigation li {
+  list-style-type: none;
+  margin: 0;
+  padding-right: 45px;
+}
+
+.site-navigation li:last-child {
+  padding-right: 0;
+}
+
+.site-navigation-list a[href]{
+  text-decoration: none;
+  color: var(--basic-black);
+}
+
+.site-navigation-list {
+  width: 436px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-right: 285px;
+  padding-left: 202px;
+  margin: 0;
+}
+
+
+.cart a {
+  text-decoration: none;
+  color: var(--basic-black);
+}
+
+.site-navigation a:hover,
+.site-navigation a:focus,
+.cart a:hover,
+.cart a:focus {
+  color: var(--red);
+}
+
+.site-navigation a:active,
+.cart a:active {
+  color: var(--basic-black);
+  opacity: 0.3;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart::before {
+  content: "";
+  background-image: url(img/icon-cart.svg);
+  background-position: 0 0;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: -30px;
+  top: 6px;
+}
+
+
