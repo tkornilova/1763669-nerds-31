@@ -72,7 +72,7 @@ body {
   box-sizing: border-box;
 }
 
-.logo-main:hover  path,
+.logo-main:hover path,
 .logo-main:focus path {
   opacity: 0.7;
 }
@@ -108,21 +108,20 @@ body {
   margin: 0;
 }
 
-
 .cart a {
   text-decoration: none;
   color: var(--basic-black);
 }
 
-.site-navigation a:hover,
-.site-navigation a:focus,
+.site-navigation a[href]:hover,
+.site-navigation a[href]:focus,
 .cart a:hover,
 .cart a:focus {
   color: var(--red);
 }
 
-.site-navigation a:active,
-.cart a:active {
+.site-navigation a[href]:active,
+.cart a[href]:active {
   color: var(--basic-black);
   opacity: 0.3;
 }
@@ -730,4 +729,50 @@ body {
 
 .clients-list li:active {
   opacity: 0.1;
+}
+
+/* Catalog Page */
+/* Container Caption */
+
+.container-caption {
+  width: 1440px;
+  height: 235px;
+  margin: 0;
+  padding-left: 357px;
+  padding-right: 356px;
+  padding-top: 72px;
+  padding-bottom: 108px;
+  box-sizing: border-box;
+  background-color: var(--gray);
+}
+
+.container-caption h2 {
+  font-size: 55px;
+  line-height: 55px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+/* Parameters */
+
+.parameters {
+  width: 260px;
+  height: 780px;
+}
+
+.parameters form {
+  width: 260px;
+  height: 780px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.parameters h3 {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  padding-bottom: 16px;
 }
