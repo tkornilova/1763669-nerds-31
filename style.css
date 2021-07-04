@@ -17,6 +17,10 @@
   --socials: #E1E1E1;
   --modal-border: #D7DCDE;
   --modal-text: #444444;
+  --icon-down-up: #A6A6A6;
+  --product-item-header: #4D4D4D;
+  --pagination-border: #DBDBDB;
+
 
 }
 
@@ -738,9 +742,9 @@ body {
   width: 1440px;
   height: 235px;
   margin: 0;
-  padding-left: 357px;
+  padding-left: 359px;
   padding-right: 356px;
-  padding-top: 72px;
+  padding-top: 78px;
   padding-bottom: 108px;
   box-sizing: border-box;
   background-color: var(--gray);
@@ -752,6 +756,17 @@ body {
   font-weight: 500;
   margin: 0;
   padding: 0;
+}
+
+/* Container Content */
+
+.container-content {
+  width: 1160px;
+  margin: 0;
+  padding-left: 140px;
+  padding-right: 140px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Parameters */
@@ -776,3 +791,251 @@ body {
   margin: 0;
   padding-bottom: 16px;
 }
+
+/* Catalog Content */
+/* Sorting */
+
+.catalog-content {
+  width: 760px;
+  margin: 0;
+  padding-top: 59px;
+}
+
+.sorting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 48px;
+  margin: 0;
+}
+
+.sorting h3 {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  padding-right: ;
+}
+
+.sorting-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  justify-self: end;
+}
+
+.sorting-list a {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--basic-black);
+  margin: 0;
+  padding-right: 25px;
+}
+
+.sorting-list a[href] {
+  opacity: 0.3;
+}
+
+.sorting-list:last-child {
+  padding-right: 0;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+
+.icon-down {
+  padding-right: 18px;
+}
+
+.icon-up {
+  opacity: 0.7;  /* Сделала  opacity больше. Если как по макету (0.2), то вообще не видно */
+}
+
+.icon-down:hover path,
+.icon-down:focus path,
+.icon-up:hover path,
+.icon-up:focus path {
+  fill: var(--icon-down-up);
+}
+
+.icon-down:active path,
+.icon-up:active path {
+  fill: var(--basic-black);
+}
+
+/* Products */
+
+.products-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.products-list li {
+  list-style: none;
+  margin: 0;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.product-item-description {
+  width: 360px;
+  height: 231px;
+  background-color: var(--gray);
+  margin: 0;
+  padding-left: 52px;
+  padding-right: 53px;
+  padding-top: 26px;
+  padding-bottom: 44px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 36px;
+  display: none;
+  text-align: center;
+}
+
+.products-item:hover .product-item-description,
+.products-item:focus .product-item-description {
+  display: initial;
+}
+
+.products-item:hover .product-item-header path,   /* Не сработало */
+.products-item:focus .product-item-header  path {
+  fill: var(--product-item-header);
+}
+
+.product-item-description h3 {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--basic-black);
+  margin: 0;
+  padding-bottom: 12px;
+}
+
+.product-item-description a {
+  text-decoration: none;
+  color: var(--basic-black);
+}
+
+.product-item-description a:hover,
+.product-item-description a:focus {
+  color: var(--red);
+}
+
+.product-item-description a:active {
+  color: var(--basic-black);
+  opacity: 0.3;
+}
+
+.product-item-description p {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--gray-dark);
+  margin: 0;
+  padding-bottom: 32px;
+}
+
+.product-item-description button {
+  width: 200px;
+  height: 50px;
+  color: var(--basic-white);
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  border-radius: 3px;
+  border: none;
+  background-color: var(--red);
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.product-item-description button:hover,
+.product-item-description button:focus {
+  background-color: var(--red-darker);
+}
+
+.product-item-description button:active {
+  background-color: var(--red-darkest);
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+}
+
+/* Pagination */
+
+.pagination-list {
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  margin-top: 45px;
+  margin-bottom: 60px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pagination-list li {
+  list-style: none;
+  padding: 0;
+  margin-right: 11px;
+  ont-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.pagination-list a {
+  text-decoration: none;
+  color: var(--basic-black);
+}
+
+.pagination-list .pagination-item-current {  /* Почему не работает более узкий селектор? */
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--pagination-border);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-item {
+  width: 50px;
+  height: 50px;
+  background-color: var(--gray);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-item-next {
+  padding: 15px 77px;
+  box-sizing: border-box;
+  background-color: var(--gray);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
