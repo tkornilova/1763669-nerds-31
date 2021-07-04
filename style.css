@@ -947,15 +947,13 @@ body {
 }
 
 .parameter-features + label::before {
-  content: "";
-  width: 23px;
+  content: url(img/icon-checkbox.svg);
+  width: 25px;
   height: 23px;
-  background-color: var(--basic-white);
-  border: 2px solid rgba(77,77,77,0.3);
-  border-radius: 3px;
+  left: -37px;
+  top: -2px;
+  border: none;
   position: absolute;
-  left: -38px;
-  top: -3px;
 }
 
 .parameter-features:checked + label::before {
@@ -965,6 +963,7 @@ body {
   left: -37px;
   top: -2px;
   border: none;
+  position: absolute;
 }
 
 .parameters button {
