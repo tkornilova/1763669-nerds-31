@@ -17,6 +17,7 @@
   --socials: #E1E1E1;
   --modal-border: #D7DCDE;
   --modal-text: #444444;
+  --modal-focus: #B4B9BB;
   --icon-down-up: #A6A6A6;
   --product-item-header: #4D4D4D;
   --pagination-border: #DBDBDB;
@@ -56,6 +57,10 @@ body {
   font-weight: 400;
   color: var(--basic-black);
   background-color: var(--basic-white);
+  display: grid;
+  grid-template-rows: min-content 1fr min-content min-content;
+  align-content: start;
+
 }
 
 /* Main Page */
@@ -121,16 +126,22 @@ body {
 }
 
 .site-navigation a[href]:hover,
-.site-navigation a[href]:focus,
-.cart a:hover,
-.cart a:focus {
+.cart a:hover {
   color: var(--red);
 }
 
-.site-navigation a[href]:active,
-.cart a[href]:active {
+.site-navigation a[href]:focus,
+.cart a:focus {
   color: var(--basic-black);
   opacity: 0.3;
+}
+
+.navigation-current,
+.site-navigation a[href]:active,
+.cart a:active {
+  border-bottom: 2px solid var(--red);
+  padding-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .cart {
@@ -140,7 +151,8 @@ body {
 
 .cart::before {
   content: "";
-  background-image: url(img/icon-cart.svg);
+  background-image: url(../img/icon-cart.svg);
+  background-color: var(--gray);
   background-position: 0 0;
   width: 15px;
   height: 15px;
@@ -154,7 +166,7 @@ body {
 .location {
   width: 1440px;
   height: 416px;
-  background: url(img/map.jpg) no-repeat;
+  background: url(../img/map.jpg) no-repeat;
   background-position: 0 0;
   background-size: cover;
   padding-top: 54px;
@@ -178,7 +190,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   margin: 0;
-  padding-bottom: 23px;
+  padding-bottom: 25px;
 }
 
 .adress p {
@@ -191,7 +203,7 @@ body {
 }
 
 .adress p:last-of-type {
-  padding-bottom: 37px;
+  padding-bottom: 40px;
 }
 
 
@@ -247,6 +259,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .socials-list li:hover,
@@ -255,20 +268,25 @@ body {
   background: linear-gradient(0deg, #E74246, #E74246), #FFFFFF;
 }
 
-.socials-list li:active {             /* Как добавить опасити на свг? */
+.socials-list li:active {
   background-color: var(--red-darkest);
   background: linear-gradient(0deg, #D7373B, #D7373B), #FFFFFF;
   box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 }
 
+.socials-list li:active svg{
+  opacity: 0.3;
+}
+
 .footer-caption {
   margin: 0;
   padding-left: 140px;
+  padding-top: 9px;
 }
 
 .footer-title {
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 36px;
+  line-height: 36px;
   font-weight: 700;
   margin: 0;
   padding-bottom: 10px;
@@ -353,13 +371,27 @@ body {
 .modal-email input {
   width: 360px;
   height: 50px;
-  border: 2px solid var(--modal-border);
+  border: 3px solid var(--modal-border);
   border-radius: 2px;
   color: var(--modal-text);
   opacity: 0.5;
   padding: 16px 16px;
   box-sizing: border-box;
   cursor: pointer;
+}
+
+.modal-form input:hover {
+  border: 3px solid var(--modal-focus);
+}
+
+.modal-form input:focus {
+  border: 3px solid var(--basic-black);
+  color: var(--basic-black);
+}
+
+.modal-form input:invalid {
+  border: 3px solid var(--red-darker);
+  color: var(--red-darker);
 }
 
 .modal-message {
@@ -373,7 +405,7 @@ body {
 .modal-message input {
   width: 760px;
   height: 118px;
-  border: 2px solid var(--modal-border);
+  border: 3px solid var(--modal-border);
   border-radius: 2px;
   color: var(--modal-text);
   opacity: 0.5;
@@ -398,11 +430,6 @@ body {
   padding: 0;
 }
 
-.modal input:hover {
-  border: 2px solid var(--modal-border);
-  border-radius: 2px;
-}
-
 /* Main Page: Content */
 /* Slider */
 
@@ -410,18 +437,19 @@ body {
   width: 1440px;
   height: 431px;
   background-color: var(--gray);
-  margin-bottom: 80px;
+  margin-bottom: 78px;
   padding: 0;
 }
 
 .slider {
   width: 1157px;
   height: 431px;
-  margin-left: 140px;
+  margin-left: 142px;
   margin-right: 143px;
   padding: 0;
   box-sizing: border-box;
-  background-image: url(img/slider-background.png);
+  background-image: url(../img/slider-background.png);
+  background-color: var(--gray);
   background-position: 397px 0;
   background-repeat: no-repeat;
   background-size: contain;
@@ -429,7 +457,7 @@ body {
 }
 
 .slider::before {
-  content: url(img/slider-switch.png);
+  content: url(../img/slider-switch.png);
   width: 88px;
   height: 18px;
   position: absolute;
@@ -453,7 +481,7 @@ body {
   line-height: 24px;
   font-weight: 400;
   margin: 0;
-  padding-bottom: 38px;
+  padding-bottom: 40px;
 }
 
 .button-slider-more {
@@ -490,7 +518,7 @@ body {
   min-height: 347px;
   margin-left: 140px;
   margin-right: 200px;
-  margin-bottom: 80px;
+  margin-bottom: 59px;
   padding: 0;
   box-sizing: border-box;
 }
@@ -502,12 +530,18 @@ body {
 
 .offers-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
 .offers-list li {
   list-style: none;
+  padding-right: 100px;
+  padding-bottom: 20px;
+}
+
+.offers-list li:nth-child(3n) {
+  padding-right: 0;
 }
 
 .offers-item img {
@@ -605,7 +639,7 @@ body {
   padding-top: 39px;
   margin-left: 140px;
   margin-right: 129px;
-  margin-bottom: 73px;
+  margin-bottom: 51px;
   box-sizing: border-box;
   border-top: 2px solid var(--gray);
   display: grid;
@@ -617,8 +651,8 @@ body {
   line-height: 45px;
   font-weight: 500;
   margin: 0;
-  padding-top: 36px;
-  padding-bottom: 32px;
+  padding-top: 37px;
+  padding-bottom: 33px;
 }
 
 .site-description-left p:first-of-type{
@@ -626,7 +660,7 @@ body {
   line-height: 24px;
   font-weight: 400;
   margin: 0;
-  padding-bottom: 40px;
+  padding-bottom: 41px;
 }
 
 .site-description-left p:nth-of-type(2) {
@@ -646,14 +680,29 @@ body {
 .site-description-list li {
   list-style: none;
   margin: 0;
-  padding-bottom: 16px;
+  padding-bottom: 24px;
+  padding-left: 36px;
   padding-top: 0px;
+}
+
+.site-description-item {
+  position: relative;
+}
+
+.site-description-item::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background-color: var(--red);
+  position: absolute;
+  top: 12px;
+  left: 0px;
 }
 
 .site-description-right img {
   width: 360px;
   height: 208px;
-  margin-bottom: 37px;
+  margin-bottom: 32px;
   padding: 0;
 }
 
@@ -669,7 +718,7 @@ body {
 .advantages-list {
   padding: 0;
   margin: 0;
-  width: 370px;
+  width: 344px;
   display: flex;
   align-content: center;
   justify-content: space-between;
@@ -691,6 +740,15 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   margin: 0;
+  padding-bottom: 12px
+}
+
+.advantages-item sup{
+  font-size: 26px;
+  line-height: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
   padding-bottom: 10px
 }
 
@@ -706,13 +764,18 @@ body {
 
 .clients {
   width: 1159px;
-  height: 184px;
+  height: 182px;
   margin-bottom: 80px;
   margin-left: 140px;
   margin-right: 141px;
+  padding-top: 46px;
+  padding-bottom: 44px;
+  padding-left: 32px;
+  padding-right: 41px;
   border-top: 2px solid var(--gray);
   border-bottom: 2px solid var(--gray);
   display: flex;
+  box-sizing: border-box;
 }
 
 .clients-list {
@@ -721,12 +784,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1159px;
+  width: 100%;
 }
 
 .clients-list li {
   list-style: none;
   opacity: 0.2;
+  position: relative;
 }
 
 .clients-list li:hover,
@@ -738,12 +802,17 @@ body {
   opacity: 0.1;
 }
 
+.clients-list li::after {
+  content: url(../img/dash.svg);
+  position: absolute;
+}
+
 /* Catalog Page */
 /* Container Caption */
 
 .container-caption {
   width: 1440px;
-  height: 235px;
+  height: 237px;
   margin: 0;
   padding-left: 359px;
   padding-right: 356px;
@@ -914,31 +983,45 @@ body {
 }
 
 .grid label::before {
-  content: "";
-  width: 17px;
-  height: 17px;
-  background-color: var(--basic-white);
-  border: 4px solid rgba(77,77,77,0.3);
-  border-radius: 50%;
+  content: url(../img/icon-checkbox-1.svg);
+  opacity: 0.4;
+  width: 25px;
+  height: 23px;
+  left: -37px;
+  top: -2px;
+  border: none;
   position: absolute;
-  left: -38px;
-  top: -3px;
 }
 
-.parameter-grid:checked  + label::after {
-  content: "";
-  width: 9px;
-  height: 9px;
-  background-color: rgba(77,77,77,0.3);
-  border-radius: 50%;
-  position: absolute;
-  left: -30px;
-  top: 5px;
+.grid label:hover::before {
+  opacity: 1;
 }
 
+.grid label:disabled::before {
+  opacity: 0.1;
+}
+
+.parameter-grid:checked  + label::before {
+  content: url(../img/icon-check-1.svg);
+  opacity: 0.4;
+  width: 25px;
+  height: 23px;
+  left: -37px;
+  top: -2px;
+  border: none;
+  position: absolute;
+}
+
+.parameter-grid:checked  + label:hover::before {
+  opacity: 1;
+}
+
+.parameter-grid:checked  + label:disabled::before {
+  opacity: 0.1;
+}
 
 .features {
-  margin-bottom: 48px;
+  margin-bottom: 53px;
 }
 
 
@@ -947,7 +1030,8 @@ body {
 }
 
 .parameter-features + label::before {
-  content: url(img/icon-checkbox.svg);
+  content: url(../img/icon-checkbox-2.svg);
+  opacity: 0.4;
   width: 25px;
   height: 23px;
   left: -37px;
@@ -956,14 +1040,32 @@ body {
   position: absolute;
 }
 
+.parameter-features + label:hover::before {
+  opacity: 1;
+}
+
+.parameter-features + label:disabled::before {
+  opacity: 0.1;
+}
+
+
 .parameter-features:checked + label::before {
-  content: url(img/icon-check.svg);
+  content: url(../img/icon-check-2.svg);
+  opacity: 0.4;
   width: 25px;
   height: 23px;
   left: -37px;
   top: -2px;
   border: none;
   position: absolute;
+}
+
+.parameter-features:checked + label:hover::before {
+  opacity: 1;
+}
+
+.parameter-features:checked + label:disabled::before {
+  opacity: 0.1;
 }
 
 .parameters button {
@@ -1003,9 +1105,9 @@ body {
 }
 
 .sorting {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 134px 1fr 40px;
+  align-items: start;
   width: 100%;
   padding-bottom: 48px;
   margin: 0;
@@ -1023,9 +1125,10 @@ body {
 .sorting-list {
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   margin: 0;
-  padding: 0;
+  padding-right: 15px;
   justify-self: end;
 }
 
@@ -1062,7 +1165,6 @@ body {
   justify-content: space-between;
   cursor: pointer;
 }
-
 
 .icon-down {
   padding-right: 18px;
@@ -1102,6 +1204,8 @@ body {
   margin: 0;
   padding-bottom: 30px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-item-description {
@@ -1125,9 +1229,16 @@ body {
   display: initial;
 }
 
-.products-item:hover .product-item-header path,   /* Не сработало */
-.products-item:focus .product-item-header  path {
-  fill: var(--product-item-header);
+.product-item-header {
+  width: 358px;
+  height: 40px;
+  opacity: 0.12;
+}
+
+
+.products-item:hover .product-item-header,
+.products-item:focus .product-item-header {
+  opacity: 1;
 }
 
 .product-item-description h3 {
@@ -1196,7 +1307,7 @@ body {
   width: 100%;
   height: 50px;
   padding: 0;
-  margin-top: 45px;
+  margin-top: 32px;
   margin-bottom: 60px;
   box-sizing: border-box;
   display: flex;
@@ -1206,13 +1317,26 @@ body {
 }
 
 .pagination-list li {
+  width: min-content;
   list-style: none;
-  padding: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 17px;
+  padding-bottom: 15px;
   margin-right: 11px;
-  ont-size: 16px;
+  font-size: 16px;
   line-height: 18px;
   font-weight: 500;
   text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.pagination-list li:last-child {
+  padding-left: 77px;
+  padding-right: 78px;
+  padding-top: 17px;
+  padding-bottom: 15px;
+  margin-right: 11px;
 }
 
 .pagination-list a {
@@ -1220,10 +1344,24 @@ body {
   color: var(--basic-black);
 }
 
-.pagination-list .pagination-item-current {  /* Почему не работает более узкий селектор? */
-  width: 50px;
+.pagination-list li:hover {
+  background-color: var(--gray-darker);
+}
+
+.pagination-list li:focus {
+  background-color: var(--gray-darkest);
+  opacity: 0.3;
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+}
+
+.pagination-list .pagination-item-current,
+.pagination-list li:active {
+  width: min-content;
   height: 50px;
   border: 3px solid var(--pagination-border);
+  outline-offset: -3px;
+  box-sizing: border-box;
+  background-color: white;
   border-radius: 3px;
   display: flex;
   justify-content: center;
@@ -1231,7 +1369,7 @@ body {
 }
 
 .pagination-item {
-  width: 50px;
+  width: min-content;
   height: 50px;
   background-color: var(--gray);
   border-radius: 3px;
