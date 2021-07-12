@@ -10,8 +10,8 @@
   </head>
   <body>
 
-    <header>
-      <div class="header-wrapper">
+    <header class="header-wrapper">
+      <div class="header-content">
         <nav class="logo-main">
           <a>
             <svg width="160" height="66" viewBox="0 0 160 66" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,11 +38,22 @@
     <main>
       <h1 class="hidden">Дизайн-студия nerd's</h1>
       <section class="slider-wrapper">
-        <div class="slider">
+        <div class="slider-1">
           <h2 class="slider-title">Долго, дорого,<br>скрупулезно.</h2>
-         <p class="slider-description">Математически выверенный дизайн<br>для вашего сайта или мобильного приложения.</p>
+          <p class="slider-description">Математически выверенный дизайн<br>для вашего сайта или мобильного приложения.</p>
           <button class="button-slider-more" aria-label="Перейти на статью">Узнать больше</button>
         </div>
+        <div class="slider-2">
+          <h2 class="slider-title">Любим математику<br>как никто другой</h2>
+          <p class="slider-description">Никакого креатива, только математические формулы<br>для расчета идеальных пропорций</p>
+          <button class="button-slider-more" aria-label="Перейти на статью">Узнать больше</button>
+        </div>
+        <div class="slider-3">
+          <h2 class="slider-title">Tолько ночь<br>только хардкор</h2>
+          <p class="slider-description">Работать днем, как все? Мы против этого.<br>Ближе к полуночи работа только начинается.</p>
+          <button class="button-slider-more" aria-label="Перейти на статью">Узнать больше</button>
+        </div>
+
       </section>
       <section class="offers">
         <h2 class="hidden">Товары</h2>
@@ -114,7 +125,7 @@
             <a href="#" aria-label="Сайт барбершопа Borodinski"><img width="209" height="90" src="img/clients-borodinski.png" alt="Логотип барбершопа Borodinski"></a>
           </li>
           <li class="clients-items">
-            <a href="#" aria-label="Приложение Pink"><img width="182" height="52" src="img/clients-pink.png" alt="Логотип приложения Pink"></a>
+            <a href="#" aria-label="Приложение Pink"><img width="185" height="52" src="img/clients-pink.png" alt="Логотип приложения Pink"></a>
           </li>
           <li class="clients-items">
             <a href="#" aria-label="Сайт магазина Mishka"><img width="173" height="84" src="img/clients-mishka.png" alt="Логотип магазина Mishka"></a>
@@ -124,17 +135,19 @@
     </main>
 
 
-    <footer>
+    <footer class="footer-wrapper">
       <h2 class="hidden">Contact us</h2>
       <section class="location">
-        <div class="adress">
-          <h3>Nёrds design studio</h3>
-          <p>наб. Реки Карповки,<br> лит П, Санкт-Петербург</p>
-          <p><a class="phone-number" href="tel+78005558628"  aria-label="Телефон компании Nerd's">+7 800 555-86-28</a></p>
-          <button class="contact-us" aria-label="Кнопка для связи с компанией Nerd's">Напишите нам</button>
-        </div>
-    </section>
-    <section class="main-footer">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1148.8260542832982!2d30.316319346220855!3d59.96803493658663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1d934f1978240bba!2zTtGRcmRz!5e0!3m2!1sru!2sus!4v1626041743621!5m2!1sru!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <div class="adress">
+            <h3>Nёrds design studio</h3>
+            <p>наб. Реки Карповки,<br> лит П, Санкт-Петербург</p>
+            <p><a class="phone-number" href="tel+78005558628"  aria-label="Телефон компании Nerd's">+7 800 555-86-28</a></p>
+            <button class="contact-us" aria-label="Кнопка для связи с компанией Nerd's">Напишите нам</button>
+          </div>
+      </section>
+
+     <section class="main-footer">
 
       <div class="socials">
         <ul class="socials-list">
@@ -173,7 +186,8 @@
     </footer>
 
 
-    <section class="modal">
+    <section class="modal-form">
+      <div class="modal">
       <h2>Напишите нам</h2>
       <div class="close-cross">
         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -184,19 +198,20 @@
         <div class="modal-data">
           <div class="modal-name">
             <label for="name">Ваше имя:</label>
-            <input type="text" id="name" name="name" value="Имя Фамилия">
+            <input type="text" id="name" name="name" placeholder="Имя Фамилия">
           </div>
           <div class="modal-email">
             <label for="email">Ваш email:</label>
-            <input type="text" id="email" name="email" value="email@example.com">
+            <input type="text" id="email" name="email" placeholder="email@example.com">
           </div>
         </div>
         <div class="modal-message">
           <label for="message">Текст письма:</label>
-          <input type="text" id="message" name="message" value="В свободной форме">
+          <textarea type="text" id="message" name="message" placeholder="В свободной форме"></textarea>
         </div>
         <button class="button-send" aria-label="Отправить письмо в Nerd's">Отправить</button>
       </form>
+    </div>
     </section>
   </body>
 </html>

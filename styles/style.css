@@ -46,8 +46,7 @@
 }
 
 body {
-  width: 1440px;
-  min-width: 960px;
+  min-width: 1200px;
   min-height: 100%;
   margin: 0 auto;
   padding: 0;
@@ -67,8 +66,14 @@ body {
 /* Header */
 
 .header-wrapper {
-  width: 1440px;
+  width: 100%;
   height: 115px;
+  background-color: var(--gray);
+  margin: 0 auto;
+}
+
+.header-content {
+  width: 1157px;
   font-size: 16px;
   line-height: 30px;
   font-weight: 500;
@@ -77,10 +82,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 140px;
-  padding-right: 140px;
-  padding-top: 49px;
-  margin: 0;
+  padding-top: 47px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -163,16 +166,18 @@ body {
 
 /* Footer */
 
+
 .location {
-  width: 1440px;
+  width: 100%;
   height: 416px;
   background: url(../img/map.jpg) no-repeat;
-  background-position: 0 0;
+  background-position: center;
   background-size: cover;
-  padding-top: 54px;
-  padding-left: 140px;
   box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
 }
+
 
 .adress {
   width: 319px;
@@ -182,6 +187,9 @@ body {
   padding: 50px 48px;
   box-sizing: border-box;
   text-align: left;
+  position: absolute;
+  left: 140px;
+  top: 54px;
 }
 
 .adress h3 {
@@ -226,16 +234,26 @@ body {
   cursor: pointer;
 }
 
+.contact-us:hover,
+.contact-us:focus {
+  background-color: var(--red-darker);
+}
+
+.contact-us:active {
+  background-color: var(--red-darkest);
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+}
+
 
 .main-footer {
-  width: 1440px;
+  width: 1157px;
   padding-top: 68px;
   padding-bottom: 68px;
-  padding-left: 140px;
-  padding-right: 240px;
   display: grid;
   grid-template-columns: 261px 1fr;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .socials-list {
@@ -281,7 +299,7 @@ body {
 .footer-caption {
   margin: 0;
   padding-left: 140px;
-  padding-top: 9px;
+  padding-top: 5px;
 }
 
 .footer-title {
@@ -289,7 +307,7 @@ body {
   line-height: 36px;
   font-weight: 700;
   margin: 0;
-  padding-bottom: 10px;
+  padding-bottom: 11px;
 }
 
 .footer-description {
@@ -302,18 +320,24 @@ body {
 
 /* Modal */
 
+.modal-form {
+  position: absolute;
+}
+
 .modal {
   width: 960px;
   height: 590px;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
   background-color: var(--basic-white);
-  margin: 0;
+  margin: 0 auto;
   padding-top: 63px;
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 84px;
   box-sizing: border-box;
   position: relative;
+
+  display: none;
 }
 
 .modal h2 {
@@ -380,16 +404,19 @@ body {
   cursor: pointer;
 }
 
-.modal-form input:hover {
+.modal-form input:hover,
+.modal-message textarea:hover {
   border: 3px solid var(--modal-focus);
 }
 
-.modal-form input:focus {
+.modal-form input:focus,
+.modal-message textarea:focus {
   border: 3px solid var(--basic-black);
   color: var(--basic-black);
 }
 
-.modal-form input:invalid {
+.modal-form input:invalid,
+.modal-message textarea:invalid {
   border: 3px solid var(--red-darker);
   color: var(--red-darker);
 }
@@ -402,14 +429,14 @@ body {
   padding-bottom: 47px;
 }
 
-.modal-message input {
+.modal-message textarea {
   width: 760px;
   height: 118px;
   border: 3px solid var(--modal-border);
   border-radius: 2px;
   color: var(--modal-text);
   opacity: 0.5;
-  padding-left: 16px;
+  padding: 16px 16px;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -430,33 +457,59 @@ body {
   padding: 0;
 }
 
+.button-send:hover,
+.button-send:focus {
+  background-color: var(--red-darker);
+}
+
+.button-send:active {
+  background-color: var(--red-darkest);
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+}
+
 /* Main Page: Content */
 /* Slider */
 
 .slider-wrapper {
-  width: 1440px;
+  width: 100%;
   height: 431px;
   background-color: var(--gray);
   margin-bottom: 78px;
   padding: 0;
 }
 
-.slider {
+.slider-1,
+.slider-2,
+.slider-3 {
   width: 1157px;
   height: 431px;
-  margin-left: 142px;
-  margin-right: 143px;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-  background-image: url(../img/slider-background.png);
+  background-size: 760px 431px;
   background-color: var(--gray);
-  background-position: 397px 0;
+  background-position: right;
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
 }
 
-.slider::before {
+.slider-1 {
+  background-image: url(../img/slider-1-background.png);
+}
+
+.slider-2 {
+  background-image: url(../img/slider-2-background.png);
+}
+
+.slider-3 {
+  background-image: url(../img/slider-3-background.png);
+}
+
+.slider-1::before,
+.slider-2::before,
+.slider-3::before {
   content: url(../img/slider-switch.png);
   width: 88px;
   height: 18px;
@@ -465,6 +518,11 @@ body {
   right: 0;
   margin: 0 auto;
   top: 318px;
+}
+
+.slider-2,
+.slider-3 {
+  display: none;
 }
 
 .slider-title {
@@ -508,16 +566,16 @@ body {
 .button-slider-more:active {
   background-color: var(--red-darkest);
   box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /* Offers */
 
 .offers {
-  width: 1100px;
+  width: 1157px;
   min-height: 347px;
-  margin-left: 140px;
-  margin-right: 200px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 59px;
   padding: 0;
   box-sizing: border-box;
@@ -594,7 +652,7 @@ body {
 .button-red:active {
   background-color: var(--red-darkest);
   box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .button-green {
@@ -611,7 +669,7 @@ body {
 .button-green:active {
   background-color: var(--green-darkest);
   box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .button-yellow {
@@ -628,18 +686,18 @@ body {
 .button-yellow:active {
   background-color: var(--yellow-darkest);
   box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /* Site Description */
 
 .site-description {
-  width: 1174px;
+  width: 1157px;
   min-height: 413px;
   padding-top: 39px;
-  margin-left: 140px;
-  margin-right: 129px;
-  margin-bottom: 51px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 52px;
   box-sizing: border-box;
   border-top: 2px solid var(--gray);
   display: grid;
@@ -669,7 +727,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   margin: 0;
-  padding-bottom: 23px;
+  padding-bottom: 21px;
 }
 
 .site-description-list {
@@ -713,6 +771,7 @@ body {
   text-transform: uppercase;
   margin: 0;
   padding-bottom: 31px;
+  text-align: end;
 }
 
 .advantages-list {
@@ -763,34 +822,44 @@ body {
 /* Clients */
 
 .clients {
-  width: 1159px;
-  height: 182px;
+  width: 1157px;
+  min-height: 182px;
   margin-bottom: 80px;
-  margin-left: 140px;
-  margin-right: 141px;
-  padding-top: 46px;
-  padding-bottom: 44px;
-  padding-left: 32px;
-  padding-right: 41px;
-  border-top: 2px solid var(--gray);
-  border-bottom: 2px solid var(--gray);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
   display: flex;
   box-sizing: border-box;
 }
 
 .clients-list {
+  width: 1157px;
+  min-height: 182px;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
+  border-top: 2px solid var(--gray);
+  border-bottom: 2px solid var(--gray);
 }
 
 .clients-list li {
+  width: 259px;
+  height: 182px;
+  margin-right: 40px;
   list-style: none;
   opacity: 0.2;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clients-list li:nth-child(4n) {
+  margin-right: 0;
 }
 
 .clients-list li:hover,
@@ -803,19 +872,27 @@ body {
 }
 
 .clients-list li::after {
-  content: url(../img/dash.svg);
+  content: "";
+  width: 2px;
+  height: 52px;
+  background-color: var(--basic-black);
   position: absolute;
+  right: -20px;
+  top: 63px;
+}
+
+.clients-list li:last-child:after,  /* Почему не убралось? */
+.clients-list li:nth-child(4n):after {
+  content: none;
 }
 
 /* Catalog Page */
 /* Container Caption */
 
 .container-caption {
-  width: 1440px;
+  width: 100%;
   height: 237px;
-  margin: 0;
-  padding-left: 359px;
-  padding-right: 356px;
+  margin: 0 auto;
   padding-top: 78px;
   padding-bottom: 108px;
   box-sizing: border-box;
@@ -823,10 +900,13 @@ body {
 }
 
 .container-caption h2 {
+  width: 960px;
+  min-height: 55px;
+  text-align: center;
   font-size: 55px;
   line-height: 55px;
   font-weight: 500;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -834,9 +914,8 @@ body {
 
 .container-content {
   width: 1160px;
-  margin: 0;
-  padding-left: 140px;
-  padding-right: 140px;
+  margin: 0 auto;
+  padding: 0;
   display: flex;
   justify-content: space-between;
 }
@@ -846,12 +925,12 @@ body {
 .parameters {
   width: 260px;
   height: 780px;
-  padding-top: 55px;
+  padding-top: 58px;
   margin: 0;
 }
 
 .parameters-price {
-  margin-bottom: 54px;
+  margin-bottom: 52px;
 }
 
 .parameters form {
@@ -943,11 +1022,11 @@ body {
   text-transform: uppercase;
   color: var(--price-input);
   margin: 0;
-  padding-right: 12px;
+  padding-right: 4px;
 }
 
 .price-range input {
-  width: 80px;
+  width: 77px;
   height: 38px;
   border: none;
   background-color: var(--gray);
@@ -968,7 +1047,7 @@ body {
   line-height: 20px;
   font-weight: 400;
   padding-left: 36px;
-  padding-bottom: 20px;
+  padding-bottom: 19px;
   margin: 0;
 }
 
@@ -1101,7 +1180,7 @@ body {
 .catalog-content {
   width: 760px;
   margin: 0;
-  padding-top: 59px;
+  padding-top: 60px;
 }
 
 .sorting {
@@ -1210,7 +1289,7 @@ body {
 
 .product-item-description {
   width: 360px;
-  height: 231px;
+  height: 225px;
   background-color: var(--gray);
   margin: 0;
   padding-left: 52px;
@@ -1248,7 +1327,7 @@ body {
   text-transform: uppercase;
   color: var(--basic-black);
   margin: 0;
-  padding-bottom: 12px;
+  padding-bottom: 10px;
 }
 
 .product-item-description a {
@@ -1272,7 +1351,7 @@ body {
   font-weight: 400;
   color: var(--gray-dark);
   margin: 0;
-  padding-bottom: 32px;
+  padding-bottom: 35px;
 }
 
 .product-item-description button {
@@ -1336,7 +1415,6 @@ body {
   padding-right: 78px;
   padding-top: 17px;
   padding-bottom: 15px;
-  margin-right: 11px;
 }
 
 .pagination-list a {
@@ -1358,6 +1436,7 @@ body {
 .pagination-list li:active {
   width: min-content;
   height: 50px;
+  padding: 15px 17px;
   border: 3px solid var(--pagination-border);
   outline-offset: -3px;
   box-sizing: border-box;

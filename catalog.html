@@ -10,8 +10,8 @@
   </head>
   <body>
 
-    <header>
-      <div  class="header-wrapper">
+    <header class="header-wrapper">
+      <div class="header-content">
         <nav class="logo-main">
           <a href="index.html">
             <svg width="160" height="66" viewBox="0 0 160 66" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,15 +21,15 @@
           </a>
         </nav>
         <nav class="site-navigation">
-          <ul class="site-navigation-list">
-             <li><a href="blank.html" aria-label="Перейти в раздел Студия">Студия</a></li>
-             <li><a href="blank.html" aria-label="Перейти в раздел Клиенты">Клиенты</a></li>
-             <li><a class="navigation-current">Магазин</a></li>
-             <li><a href="blank.html" aria-label="Перейти в раздел Контакты">Контакты</a></li>
-          </ul>
-        </nav>
-        <nav class="cart">
-          <a href="blank.html">Корзина</a>
+         <ul class="site-navigation-list">
+            <li><a href="blank.html" aria-label="Перейти в раздел Студия">Студия</a></li>
+            <li><a href="blank.html" aria-label="Перейти в раздел Клиенты">Клиенты</a></li>
+            <li><a class="navigation-current">Магазин</a></li>
+            <li><a href="blank.html" aria-label="Перейти в раздел Контакты">Контакты</a></li>
+         </ul>
+       </nav>
+       <nav class="cart">
+          <a href="blank.html" aria-label="Перейти к корзине">Корзина</a>
         </nav>
       </div>
     </header>
@@ -114,16 +114,20 @@
           </ul>
           <div class="icons">
             <div class="icon-down">
-              <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.5 10L0 0H11" fill="#231F20"/>
-              </svg>
+              <a>
+                <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.5 10L0 0H11" fill="#231F20"/>
+                </svg>
+              </a>
             </div>
             <div class="icon-up">
-              <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g opacity="0.2">
-                <path d="M5.5 0L0 10H11L5.5 0Z" fill="#A6A6A6"/>
-                </g>
-              </svg>
+              <a>
+                <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.2">
+                  <path d="M5.5 0L0 10H11L5.5 0Z" fill="#A6A6A6"/>
+                  </g>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -175,7 +179,7 @@
             <li class="pagination-item pagination-item-current"><a>1</a></li>
             <li class="pagination-item"><a href="#">2</a></li>
             <li class="pagination-item"><a href="#">3</a></li>
-            <li class="pagination-item"><a href="#">Следуюшая</a></li>
+            <li class="pagination-item pagination-next"><a href="#">Следующая</a></li>
 
           </ul>
 
@@ -191,14 +195,16 @@
     <footer>
       <h2 class="hidden">Contact us</h2>
       <section class="location">
-        <div class="adress">
-          <h3>Nёrds design studio</h3>
-          <p>наб. Реки Карповки,<br> лит П, Санкт-Петербург</p>
-          <p><a class="phone-number" href="tel+78005558628"  aria-label="Телефон компании Nerd's">+7 800 555-86-28</a></p>
-          <button class="contact-us" aria-label="Кнопка для связи с компанией Nerd's">Напишите нам</button>
-        </div>
-    </section>
-    <section class="main-footer">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1148.8260542832982!2d30.316319346220855!3d59.96803493658663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1d934f1978240bba!2zTtGRcmRz!5e0!3m2!1sru!2sus!4v1626041743621!5m2!1sru!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <div class="adress">
+            <h3>Nёrds design studio</h3>
+            <p>наб. Реки Карповки,<br> лит П, Санкт-Петербург</p>
+            <p><a class="phone-number" href="tel+78005558628"  aria-label="Телефон компании Nerd's">+7 800 555-86-28</a></p>
+            <button class="contact-us" aria-label="Кнопка для связи с компанией Nerd's">Напишите нам</button>
+          </div>
+      </section>
+
+     <section class="main-footer">
 
       <div class="socials">
         <ul class="socials-list">
@@ -213,7 +219,7 @@
           <li class="sosials-item">
             <span class="hidden">Facebook</span>
             <a href="#">
-              <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg tabindex="0" width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 4V0H8C5.79086 0 4 1.79086 4 4V8H0V12H4V22H8V12H12V8H8V4H12Z" fill="white"/>
               </svg>
             </a>
@@ -221,7 +227,7 @@
           <li class="sosials-item">
             <span class="hidden">Instagram</span>
             <a href="#">
-              <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg tabindex="0" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0H18C19.65 0 21 1.35 21 3V18C21 19.65 19.65 21 18 21H3C1.35 21 0 19.65 0 18V3C0 1.35 1.35 0 3 0ZM14 10.5C14 8.57 12.43 7 10.5 7C8.57 7 7 8.57 7 10.5C7 12.43 8.57 14 10.5 14C12.43 14 14 12.43 14 10.5ZM3 18V9H4.181C4.0626 9.49127 4.00186 9.99467 4 10.5C4 14.0899 6.91015 17 10.5 17C14.0899 17 17 14.0899 17 10.5C16.9986 9.99464 16.9379 9.49118 16.819 9H18V18H3ZM14 7H18V3H14V7Z" fill="white"/>
               </svg>
             </a>
