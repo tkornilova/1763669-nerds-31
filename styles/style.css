@@ -178,6 +178,16 @@ body {
   position: relative;
 }
 
+.location iframe {
+  width: 100%;
+  height: 416px;
+}
+
+.footer-form-wrapper {
+  width: 1200px;
+  position: relative;
+  margin: 0 auto;
+}
 
 .adress {
   width: 319px;
@@ -188,8 +198,8 @@ body {
   box-sizing: border-box;
   text-align: left;
   position: absolute;
-  left: 140px;
-  top: 54px;
+  left: 22px;
+  bottom: 68px;
 }
 
 .adress h3 {
@@ -264,10 +274,13 @@ body {
   padding: 0;
 }
 
-.socials-list li {
+.socials-list {
+  list-style: none;
+}
+
+.socials-list a {
   width: 81px;
   height: 81px;
-  list-style: none;
   background-color: var(--socials);
   background: linear-gradient(0deg, #E1E1E1, #E1E1E1), #FFFFFF;
   border: none;
@@ -280,21 +293,22 @@ body {
   cursor: pointer;
 }
 
-.socials-list li:hover,
-.socials-list li:focus {
+.socials-list a:hover,
+.socials-list a:focus {
   background-color: var(--red-darker);
   background: linear-gradient(0deg, #E74246, #E74246), #FFFFFF;
 }
 
-.socials-list li:active {
+.socials-list a:active {
   background-color: var(--red-darkest);
   background: linear-gradient(0deg, #D7373B, #D7373B), #FFFFFF;
   box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
 }
 
-.socials-list li:active svg{
+.socials-list a:active svg{
   opacity: 0.3;
 }
+
 
 .footer-caption {
   margin: 0;
@@ -320,10 +334,6 @@ body {
 
 /* Modal */
 
-.modal-form {
-  position: absolute;
-}
-
 .modal {
   width: 960px;
   height: 590px;
@@ -335,9 +345,12 @@ body {
   padding-right: 100px;
   padding-bottom: 84px;
   box-sizing: border-box;
-  position: relative;
-
+  z-index: 100;
+  position: absolute;
   display: none;
+  left: 0;
+  right: 0;
+  bottom: -449px;
 }
 
 .modal h2 {
@@ -367,6 +380,7 @@ body {
 
 .modal-data {
   width: 760px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
@@ -425,7 +439,7 @@ body {
   width: 760px;
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 0 auto;
   padding-bottom: 47px;
 }
 
@@ -453,7 +467,7 @@ body {
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  margin: 0;
+  margin-left: 100px;
   padding: 0;
 }
 
@@ -470,6 +484,7 @@ body {
 
 /* Main Page: Content */
 /* Slider */
+
 
 .slider-wrapper {
   width: 100%;
@@ -830,6 +845,7 @@ body {
   padding: 0;
   display: flex;
   box-sizing: border-box;
+
 }
 
 .clients-list {
@@ -867,21 +883,25 @@ body {
   opacity: 1;
 }
 
+.clients-list li::after:hover,
+.clients-list li::after:focus {
+  opacity: 0.2;
+}
+
 .clients-list li:active {
   opacity: 0.1;
 }
 
 .clients-list li::after {
-  content: "";
+  content: url(..//img/dash.svg);
   width: 2px;
   height: 52px;
-  background-color: var(--basic-black);
   position: absolute;
   right: -20px;
   top: 63px;
 }
 
-.clients-list li:last-child:after,  /* Почему не убралось? */
+.clients-list li:last-child:after,
 .clients-list li:nth-child(4n):after {
   content: none;
 }
@@ -1099,6 +1119,10 @@ body {
   opacity: 0.1;
 }
 
+main {
+  position: relative;
+}
+
 .features {
   margin-bottom: 53px;
 }
@@ -1289,7 +1313,7 @@ body {
 
 .product-item-description {
   width: 360px;
-  height: 225px;
+  min-height: 225px;
   background-color: var(--gray);
   margin: 0;
   padding-left: 52px;
